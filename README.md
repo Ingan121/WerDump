@@ -10,7 +10,7 @@
 * Suspending only works on nonstandard kernel-mode protections. Doesn't work on standard PPL protected processes.
 <br><br>
 * Somehow this is capable of killing MS Defender processes (MsMpEng, MpDefenderCoreService, and NisSrv) plus SgrmBroker. I just discovered this while writing this readme. Weirdly they just die as soon as WerFaultSecure finishes its job.
-* Does nothing on other PPL-protected antiviruses. Tested with AhnLab V3 Lite and Kaspersky Free. Maybe because they use both PPL and their own kernel-mode protections.
+* Does nothing on other PPL-protected processes. Tested with AhnLab V3 Lite, Kaspersky Free, and PPL-protected Notepad launched with [KDU](https://github.com/hfiref0x/KDU).
 
 ## Prerequisites
 The registry value "DumpType" under "HKLM\SOFTWARE\Microsoft\Windows\Windows Error Reporting\LocalDumps" should be set to 2.
