@@ -1,33 +1,5 @@
 #include "Utils.h"
 
-DWORD GetServicePid(const wstring& ServiceName)
-{
-	const SC_HANDLE controlManagerHandle = OpenSCManagerW(nullptr, nullptr, SC_MANAGER_CONNECT);
-	if (nullptr == controlManagerHandle)
-		throw runtime_error("Connecting to Service Control Manager failed");
-
-	const SC_HANDLE serviceHandle = OpenServiceW(controlManagerHandle, ServiceName.c_str(), SERVICE_QUERY_STATUS);
-	CloseServiceHandle(controlManagerHandle);
-	if (nullptr == serviceHandle)
-		throw runtime_error("Opening service handle failed");
-
-	SERVICE_STATUS_PROCESS procInfo;
-	DWORD bytesNeeded;
-	if (!QueryServiceStatusEx(serviceHandle, SC_STATUS_PROCESS_INFO, reinterpret_cast<LPBYTE>(&procInfo), sizeof(SERVICE_STATUS_PROCESS), &bytesNeeded))
-	{
-		CloseServiceHandle(serviceHandle);
-		throw runtime_error("Querying service status failed");
-	}
-
-	CloseServiceHandle(serviceHandle);
-	return procInfo.dwProcessId;
-}
-
-DWORD GetLsassPid()
-{
-	return GetServicePid(L"samss");
-}
-
 BOOL IsLocalSystem()
 {
 	const HANDLE tokenHandle = GetCurrentProcessToken();

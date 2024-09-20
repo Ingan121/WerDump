@@ -11,7 +11,6 @@ using std::string;
 using std::wstring;
 using std::runtime_error;
 
-DWORD GetLsassPid();
 BOOL IsLocalSystem();
 DWORD GetFirstThread(DWORD Pid);
 void PrintCrashDampLocation();
