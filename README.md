@@ -6,7 +6,7 @@
 * This report will cause the service to dump the process's memory.
 <br><br>
 * Somehow this can kill MS Defender processes (MsMpEng, MpDefenderCoreService, and NisSrv) plus SgrmBroker.
-* Does nothing on some other PPL-protected processes. Tested with AhnLab V3 Lite, Kaspersky Free, and PPL-protected Notepad launched with [KDU](https://github.com/hfiref0x/KDU), LSASS, and CSRSS.
+* Does nothing on some other PPL-protected processes. Tested with AhnLab V3 Lite, Kaspersky Free, PPL-protected Notepad launched with [KDU](https://github.com/hfiref0x/KDU), LSASS, and CSRSS.
 <br><br>
 * Also does some random behavior if the target process is protected by a kernel-mode driver. For example, WerFault may fail to dump the process and keep it suspended for a long time.
 * This suspension is not permanent. WerFault will give it up and resume the process after some time passes.
