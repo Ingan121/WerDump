@@ -25,7 +25,7 @@ This does not constitute a security boundary, as possessing SYSTEM level privile
 After careful investigation, this case has been assessed as not a vulnerability and does not meet MSRC’s bar for immediate servicing.
 ```
 `¯\_(ツ)_/¯`
-* Is it patched now? I don't know. At least it still works on my Win10 22H2 (10.0.19045.5131) machine.
+* Is it patched now? I don't know. At least it still works on my Win10 22H2 (10.0.19045.5198) machine.
 
 ## Prerequisites
 The registry value "DumpType" under "HKLM\SOFTWARE\Microsoft\Windows\Windows Error Reporting\LocalDumps" should be set to 2.
