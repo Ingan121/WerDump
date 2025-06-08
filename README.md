@@ -26,6 +26,7 @@ After careful investigation, this case has been assessed as not a vulnerability 
 ```
 `¯\_(ツ)_/¯`
 * Is it patched now? I don't know. At least it still works on my Win10 22H2 (10.0.19045.5198) machine.
+* Still works on 19045.5917
 
 ## Prerequisites
 The registry value "DumpType" under "HKLM\SOFTWARE\Microsoft\Windows\Windows Error Reporting\LocalDumps" should be set to 2.
